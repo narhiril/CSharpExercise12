@@ -19,7 +19,7 @@ namespace CodingEventsDemo.Models
         public int Id { get; }
         static private int nextId = 1;
 
-        public Event(string name, string description, string contactEmail) : base()
+        public Event(string name, string description, string contactEmail) : this()
         {
             Name = name;
             Description = description;
