@@ -45,7 +45,7 @@ namespace coding_events_practice.Controllers
                     Name = addEventViewModel.Name,
                     Description = addEventViewModel.Description,
                     ContactEmail = addEventViewModel.ContactEmail,
-                    Type = addEventViewModel.Type
+                    Category = context.Categories.Find(addEventViewModel.CategoryId)
                 };
 
                 context.Events.Add(newEvent);
@@ -56,6 +56,7 @@ namespace coding_events_practice.Controllers
             }
 
             return View(addEventViewModel);
+
         }
 
         public IActionResult Delete()
