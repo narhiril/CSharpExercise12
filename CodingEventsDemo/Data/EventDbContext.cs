@@ -9,6 +9,13 @@ namespace CodingEventsDemo.Data
 
         public DbSet<EventCategory> Categories { get; set; }
 
+        public DbSet<EventTag> EventTags { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<EventTag>().HasKey(tag => new { tag.EventId, tag.TagId });
+        }
+
         public EventDbContext(DbContextOptions<EventDbContext> options) : base(options)
         {
         }
