@@ -1,9 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CodingEventsDemo.Migrations
 {
-    public partial class FixingThisByHandIGuess : Migration
+    public partial class FixTagsTableName : Migration
     {
         protected override void Up(MigrationBuilder mb)
         {

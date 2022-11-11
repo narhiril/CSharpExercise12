@@ -1,6 +1,6 @@
 ﻿@model CodingEventsDemo.ViewModels.EventDetailViewModel;
 
-<table>
+<table class="table">
     <tr>
         <th>
             Name
@@ -38,4 +38,4 @@
 </table>
 
 
-<a asp-controller="Tag" asp-action="AddEvent" asp-route="@Model.EventId">Add Tag</a>
+<a asp-controller="Tag" asp-action="AddEvent" asp-route-id="@Model.EventId">Add Tag</a>
