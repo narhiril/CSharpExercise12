@@ -1,4 +1,5 @@
 ﻿using CodingEventsDemo.Models;
+using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,8 +14,11 @@ namespace CodingEventsDemo.ViewModels
 
         public string TagText { get; set; }
 
+        public int EventId { get; set; }
+
         public EventDetailViewModel(Event theEvent, List<EventTag> eventTags)
         {
+            EventId = theEvent.Id;
             Name = theEvent.Name;
             Description = theEvent.Description;
             ContactEmail = theEvent.ContactEmail;
