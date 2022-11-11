@@ -20,13 +20,7 @@ namespace CodingEventsDemo.Controllers
         public IActionResult AddEvent(int id)
         {
             Event theEvent = context.Events.Find(id);
-            List<Tag> possibleTags = (
-                from tagEntry in context.EventTags.Include(x => x.Tag)
-                select new Tag
-                {
-                    Id = tagEntry.TagId,
-                    Name = tagEntry.Tag.Name
-                }).ToList();
+            List<Tag> possibleTags = context.Tags.ToList();
             AddEventTagViewModel viewModel = new AddEventTagViewModel(theEvent, possibleTags);
             return View(viewModel);
         }
